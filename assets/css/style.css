@@ -1,5 +1,7 @@
 body {
-   margin: 20px;
+   margin: 60px;
+   padding: 60px;
+   border: solid;
 }
 
 header {
@@ -8,17 +10,34 @@ header {
     font-size: 30px;
 }
 
+header h2 {
+    padding-bottom: 10px;
+}
+
+.wrapper p {
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+    
+}
+
 main {
     /* margin: 20%;
     background-color: yellow; */
 }
 
 .wrapper {
-    margin: 20%;
-    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 400px;
+    /* background-color: yellow; */
 }
 
-button {
+.wrapper button {
+    margin: 0 auto;
+    display: block;
     background-color: blueviolet;
     border-radius: 8px;
     color: #fff;
@@ -37,6 +56,7 @@ button {
 }
 
 .questions {
+    padding-top: 60px;
     
 }
 

@@ -7,21 +7,7 @@ const mainEl = document.getElementById("main-time");
 
 let secondsLeft = 60;
 
-// start.addEventListener('click', function() {
-// 	// let i = 0;
-
-//   timeEl.textContent = "Time: " + secondsLeft;
-
-
-
-//   secondsLeft--;
-	
-// 	let timerId = setInterval(function() {
-// 		console.log('!')
-// 	}, 1000);
-// });
-
-function setTime() {
+start.addEventListener('click', function setTime() {
   // Sets interval in variable
   const timerInterval = setInterval(function () {
     secondsLeft--;
@@ -32,12 +18,11 @@ function setTime() {
       clearInterval(timerInterval);
       const countdown = document.getElementById("countdown").innerHTML = "Game Over!";
       return countdown;
-      // Calls function to create and append image
-      // sendMessage();
+      
     }
 
   }, 1000);
-}
+})
 
 function startQuiz(event) {
    event.stopPropagation();
@@ -57,6 +42,6 @@ function startQuiz(event) {
 
 // setTime();
 
-start.addEventListener('click', setTime());
+
 
 // button.addEventListener("click", setTime());

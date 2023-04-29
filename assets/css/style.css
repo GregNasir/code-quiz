@@ -14,7 +14,7 @@ header h2 {
     padding-bottom: 10px;
 }
 
-.wrapper p {
+#intro p {
     font-size: 20px;
     line-height: 1.3;
     text-align: center;
@@ -26,16 +26,24 @@ main {
     background-color: yellow; */
 }
 
-.wrapper {
+#intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: auto;
-    padding: 400px;
+    padding-top: 400px;
+    /* padding: 400px; */
     /* background-color: yellow; */
 }
 
-.wrapper button {
+#intro h1 {
+    font-size: 40px;
+   
+    /* background-color: yellow; */
+}
+
+#intro button, .options {
     margin: 0 auto;
     display: block;
     background-color: blueviolet;
@@ -55,6 +63,12 @@ main {
     
 }
 
+.intro-text {
+    padding: 20px 20px;
+    
+    
+}
+
 .questions {
     padding-top: 60px;
     
@@ -66,4 +80,28 @@ main {
 
 #high-scores {
     float: left;
+}
+
+
+#questions-page, #right-wrong {
+    display: none;
+    
+}
+
+.questions-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     margin: auto;
+    padding-top: 400px;
+    text-align: center;
+}
+
+.question-list {
+    padding: 50px;
+}
+
+.options-button {
+    display: block;
 }

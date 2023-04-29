@@ -9,31 +9,51 @@
     <title>Code Quiz Challenge</title>
 </head>
 <body>
-    <section id="main-time">
-        <h1 class="time" style="text-align:center;"></h1>
-        <article id= "countdown"></article>
-    </section>
-    <section id="high-scores">
-        <h2>High Scores</h2>
-    </section>
-    <section class="wrapper">
-        <header>
-            <h3>Football Quiz Challenge</h3>
-            
-        </header>
-        <section>
-            <p>Try to answer the following football-related questions within a time limit.</p>
-            <p>Keep in mind that the incorrect answers will penalize your score/time</p>
-            <p>by ten seconds.</p>
+    <header>
+        <section id="main-time">
+            <p class="time" style="text-align:center;"></p>
+            <article id= "clock"></article>
         </section>
-        <main>
-            
 
-            <section class="questions">
+        <section id="high-scores">
+            <p>High Scores</p>
+        </section>
+    </header>
+
+    <main>
+        <section  id="intro">
+        
+            <h1>Code Quiz Challenge</h1>      
+           
+            <section class="intro-text">
+                <p>Try to answer the following code-related questions within a time limit.</p>
+                <p>Keep in mind that the incorrect answers will penalize your score/time</p>
+                <p>by ten seconds.</p>
+            </section>
+            
+            <section>
                 <button id="start"><h3>Start Quiz</h3></button>
             </section>
-        </main>
-    </section>
+        </section>
+
+        <section id="questions-page" class="questions-page">
+            <h2 class="question-list">questions</h2>
+                <ul>
+                    <li><button class ="options button" id="answer_btn1" value="a">option1</button></li>
+                    <li><button class ="options button" id="answer_btn2" value="b">option2</button></li>
+                    <li><button class ="options button" id="answer_btn3" value="c">option3</button></li>
+                    <li><button class ="options button" id="answer_btn4" value="d">option4</button></li>
+                </ul>
+
+        </section>
+
+        <section id="right-wrong">
+            <p>correct or incorrect</p>
+        </section>
+
+
+    </main>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     
     <script src="./script.js"></script>

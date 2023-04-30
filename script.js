@@ -170,9 +170,9 @@ function userScore () {
 
 function showScore () {
   userRecord.innerHTML = "";
-  userRecord.style.display ="block";
+  userRecord.style.display = "block";
     var highScores = compileScores();   
-    // Slice the high score array to only show the top five high scores. 
+    // Slice the high score array to only show the top ten high scores. 
     var topTen = highScores.slice(0,10);
     for (var i = 0; i < topTen.length; i++) {
         var item = topTen[i];
@@ -180,7 +180,7 @@ function showScore () {
     var li = document.createElement("li");
     li.textContent = item.user + " - " + item.score;
     li.setAttribute("data-index", i);
-    scoreRecord.appendChild(li);
+    userRecord.appendChild(li);
     }
 };
 
@@ -189,7 +189,7 @@ function compileScores () {
   var userScoreList = userScore();
   if (userScore == null ){
       return;
-  } else{
+  } else {
     userScoreList.sort(function(a,b){
       return b.score - a.score;
   })

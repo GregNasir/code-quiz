@@ -1,7 +1,7 @@
 // Selects element by class
 var startBtn = document.querySelector("#start");
 var submitBtn =document.querySelector("#submit-btn");
-var timeEl = document.querySelector(".time");
+var timeEl = document.querySelector("#time");
 var intro = document.querySelector("#intro");
 
 
@@ -18,7 +18,15 @@ var answerBtn4 = document.querySelector("#answer_btn4");
 var checkSelection = document.querySelector("#check-selection");
 var scoreTally = document.querySelector("#submit-page")
 var scoreTotal = document.querySelector("#score-total");
-var userInitials =document.querySelector("#initials");
+var userInitials = document.querySelector("#initials");
+
+var highScorePage = document.querySelector("#high-score-page");
+var userRecord = document.querySelector("#user-record");
+var scoreConfirm = document.querySelector("#high-scores");
+var complete = document.querySelector("#complete");
+
+var backBtn = document.querySelector("#back-btn");
+var clearBtn=document.querySelector("#clear-btn");
 
 
 
@@ -50,18 +58,17 @@ var questionHub = [
   }
 ];
 
-var timeLeft = document.getElementById("time");
+// var timeLeft = document.getElementById("time");
 
-// var secondsLeft = 60;
+var secondsLeft = 60;
 var questionNumber = 0;
-// var totalScore = 0;
+var finalScore = 0;
 var questionCount = 1;
 
 
 // Selects element by id
-const mainEl = document.getElementById("main-time");
+// var mainEl = document.querySelectorAll("#main-time");
 
-let secondsLeft = 60;
 
 
 // start.addEventListener('click', function setTime(e) {
@@ -69,18 +76,22 @@ function clock() {
   
 
   // Sets interval in variable
-  const timerInterval = setInterval(function () {
+  var timerInterval = setInterval(function () {
     
     secondsLeft--;
     timeEl.textContent = "Time: " + secondsLeft;
 
-    if (secondsLeft === 0) {
+    if (secondsLeft <= 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
-      const clock = document.getElementById("clock").innerHTML = "Game Over!";
-      return gameOver();
+      timeEl.textContent = "Time expired!";
+      complete.textContent = "Time expired!";
+      gameOver();
       
-    }
+    } else  if(questionCount >= questionHub.length +1) {
+      clearInterval(timerInterval);
+      gameOver();
+      } 
     
   }, 1000);
 }
@@ -110,14 +121,14 @@ function answerVeri(e) {
   //make it display
   checkSelection .style.display = "block";
   setTimeout(function () {
-    checkSelection .style.display = 'none';
+    checkSelection.style.display = 'none';
   }, 1000);
 
   // answer check
   if (questionHub[questionOption].answer == e.target.value) {
     checkSelection.textContent = "Correct!"; 
-      totalScore = totalScore + 1;
-      questions(questionOption +1);
+      finalScore = finalScore + 1;
+      
 
   } else {
       secondsLeft = secondsLeft - 10;
@@ -135,25 +146,71 @@ questionCount++;
 
 function gameOver() {
 
-  questionPage.style.display = "none";
+  questionsPage.style.display = "none";
   scoreTally.style.display = "block";
-  console.log(scoreBoard);
+  console.log(scoreTally);
   // show final score
-  scoreTotal.textContent = "Your final score is :" + totalScore ;
+  scoreTotal.textContent = "Your final score is :" + finalScore ;
   // clearInterval(timerInterval);  
-  timeLeft.style.display = "none"; 
+  timeEl.style.display = "none";  
+  // timeEl = document.getElementById("timeEl").style.visibility = "hidden";
+
 };
 
 function userScore () {
   var currentScore = localStorage.getItem("ScoreList");
   if (currentScore !== null ){
       newScoreList = JSON.parse(currentScore);
-      return newList;
+      return newScoreList;
   } else {
       newScoreList = [];
   }
   return newScoreList;
 };
+
+function showScore () {
+  userRecord.innerHTML = "";
+  userRecord.style.display ="block";
+    var highScores = compileScores();   
+    // Slice the high score array to only show the top five high scores. 
+    var topTen = highScores.slice(0,10);
+    for (var i = 0; i < topTen.length; i++) {
+        var item = topTen[i];
+    // Show the score list on score board
+    var li = document.createElement("li");
+    li.textContent = item.user + " - " + item.score;
+    li.setAttribute("data-index", i);
+    scoreRecord.appendChild(li);
+    }
+};
+
+// sort score and ranking the highscore list
+function compileScores () {
+  var userScoreList = userScore();
+  if (userScore == null ){
+      return;
+  } else{
+    userScoreList.sort(function(a,b){
+      return b.score - a.score;
+  })
+  return userScoreList;
+}};
+
+// push new score and initial to the local storage
+function addScore (n) {
+  var newScoreList = userScore();
+  newScoreList.push(n);
+  localStorage.setItem("ScoreList", JSON.stringify(newScoreList));
+};
+
+function saveScore () {
+  var scoreNum = {
+      user: userInitial.value,
+      score: finalScore
+  }
+  addScore(scoreNum);
+  showScore();
+}
 
 
 
@@ -173,6 +230,33 @@ submitBtn.addEventListener("click", function(e) {
   highScorePage.style.display = "block";
   questionsPage.style.display ="none";
   saveScore();
+});
+
+// check highscore ranking list
+scoreConfirm.addEventListener("click", function(e) {
+  e.preventDefault();
+  scoreTally.style.display = "none";
+  intro.style.display = "none";
+  highScorePage.style.display = "block";
+  questionsPage.style.display ="none";
+  showScore();
+});
+
+//go back to main page
+backBtn.addEventListener("click",function(e){
+  e.preventDefault();
+  scoreTally.style.display = "none";
+  intro.style.display = "block";
+  highScorePage.style.display = "none";
+  questionsPage.style.display ="none";
+  location.reload();
+});
+
+//clear local storage and clear page shows
+clearBtn.addEventListener("click",function(e) {
+  e.preventDefault();
+  localStorage.clear();
+  showScore();
 });
 
 

@@ -12,14 +12,15 @@
     <header>
         <section id="main-time">
             
-            <article id= "clock"> 
-                <p class="time">Time: 60</p>
+            <article> 
+                <p id="time">Time: 60</p>
             </article>
         </section>
-
-        <section id="high-scores">
-            <p>High Scores</p>
-        </section>
+            <article>
+                <button class="button" id="high-scores">
+                    <p>High Scores</p>
+                </button>
+            </article>
     </header>
 
     <main>
@@ -53,16 +54,30 @@
             <p>correct or incorrect</p>
         </section>
 
-        <section id="submit-page">
+        <section id="submit-page" class="submit-page">
             <article>
-                <h2 id="complete">Quiz Over!</h2>
-                <p id = "total-score">Your score is: </p>
+                <h2 id="complete">Quiz Complete!</h2>
+                <p id = "score-total">Your score is: </p>
                 <p>Enter initials
                     <input id="initials">
                     <button class="button" id="submit-btn">Submit</button>
                 </p>
             </article>
+        </section>
 
+        <section id="high-score-page">
+            <article>
+                
+                <h2>High Scores</h2>
+                <div id="user-record">
+                    <p>Your record</p>
+                </div><br><br>
+                <div>
+                    <button class="button" id="back-btn">Go back</button>
+                    <button class="button" id="clear-btn">Clear Highscores</button>
+                </div>
+            
+            </article>
         </section>
 
 

@@ -83,7 +83,7 @@ main {
 }
 
 
-#questions-page, #right-wrong {
+#questions-page, #check-selection, #submit-page {
     display: none;
     
 }

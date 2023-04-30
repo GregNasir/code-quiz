@@ -205,7 +205,7 @@ function addScore (n) {
 
 function saveScore () {
   var scoreNum = {
-      user: userInitial.value,
+      user: userInitials.value,
       score: finalScore
   }
   addScore(scoreNum);

@@ -1,6 +1,8 @@
 // Set variables and link to html
 var startBtn = document.querySelector("#start");
 var submitBtn =document.querySelector("#submit-btn");
+var backBtn = document.querySelector("#back-btn");
+var clearBtn=document.querySelector("#clear-btn");
 var timeEl = document.querySelector("#time");
 var intro = document.querySelector("#intro");
 var questionsPage = document.querySelector("#questions-page");
@@ -18,8 +20,7 @@ var highScorePage = document.querySelector("#high-score-page");
 var userRecord = document.querySelector("#user-record");
 var scoreConfirm = document.querySelector("#high-scores");
 var complete = document.querySelector("#complete");
-var backBtn = document.querySelector("#back-btn");
-var clearBtn=document.querySelector("#clear-btn");
+
 
 
 // list of questions for quiz
@@ -184,11 +185,11 @@ function showScore () {
   userRecord.innerHTML = "";
   userRecord.style.display = "block";
     var highScores = compileScores();   
-    // Slice the high score array to only show the top ten high scores. 
+    // only show the top ten high scores. 
     var topTen = highScores.slice(0,10);
     for (var i = 0; i < topTen.length; i++) {
         var item = topTen[i];
-    // Show the score list on score board
+    // Shows scores
     var li = document.createElement("li");
     li.textContent = item.user + " - " + item.score;
     li.setAttribute("data-index", i);

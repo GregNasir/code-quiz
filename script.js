@@ -120,7 +120,7 @@ function questions(n) {
 function answerVeri(e) {
   e.preventDefault();
   
-  checkSelection .style.display = "block";
+  checkSelection.style.display = "block";
   setTimeout(function () {
     checkSelection.style.display = 'none';
   }, 1000);
@@ -137,7 +137,7 @@ function answerVeri(e) {
   }
        
   if (questionOption < questionHub.length -1 ) {
-  // calls questionshub to bring in next question when any reactBtn is clicked
+  // calls questionHub to bring in next question when any reactBtn is clicked
       questions(questionOption +1);
   } else {
   gameOver();
@@ -150,7 +150,7 @@ function gameOver() {
 
   questionsPage.style.display = "none";
   scoreTally.style.display = "block";
-  console.log(scoreTally);
+  // console.log(scoreTally);
   // shows final score
   scoreTotal.textContent = "Your final score is :" + finalScore ;
   // clearInterval(timerInterval);  
@@ -203,6 +203,7 @@ function showScore () {
     li.textContent = item.user + " - " + item.score;
     li.setAttribute("data-index", i);
     userRecord.appendChild(li);
+    timeEl.style.display = "none"; 
     }
 };
 

@@ -26,27 +26,27 @@ var complete = document.querySelector("#complete");
 // list of questions for quiz
 var questionHub = [
   {
-      question: "Questions 1 : Who created Javasript?",
+      question: "Questions : Who created Javasript?",
       options: ["a. Bill Gates", "b. Al Gore", "c. Brendan Eich", "d. Isaac Newton"],
       answer: "c"
   },
   {
-      question: "Questions 2 : The first index value in an array is:",
+      question: "Questions : The first index value in an array is:",
       options: ["a. 0", "b. 1", "c. NAN", "d. -1"],
       answer: "a"
   },
   {
-      question: "Questions 3 : How do you render to the console?",
+      question: "Questions : How do you render to the console?",
       options: ["a. var = ", "b. for i = 0", "c. function = myfunction()", "d. console.log()"],
       answer: "d"
   },
   {
-      question: "Questions 4 : Which option saves an element to local storage?",
+      question: "Questions : Which option saves an element to local storage?",
       options: ["a. .getItem", "b. .sort", "c. .setItem", "d. .trim"],
       answer: "c"
   },
   {
-      question: "Questions 5 : Which is not a boolen?",
+      question: "Questions : Which is not a boolen?",
       options: ["a. ==", "b. 'my name + ''", "c. >", "d. !="],
       answer: "b"
   }
@@ -96,6 +96,15 @@ function startQuiz() {
   questions(questionOption);
 
 }
+
+function shuffleQuestions() {
+  questionHub.sort(function () {
+      return 0.5 - Math.random();
+  })
+}
+
+shuffleQuestions();
+
 
 // shows questions and answers on page
 function questions(n) {

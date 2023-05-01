@@ -27,7 +27,8 @@ HTML, CSS and Javascript were used to produce this webpage. Creating its appeara
 
 This code quiz offers users the change test their coding knowledge, and presented with a score when quiz complete or time runs out.
   
-  
+  <img width="1425" alt="Code-Quiz-Screen-Shot" src="https://user-images.githubusercontent.com/63434657/235388867-166c2a6c-6a9f-48a2-900e-640d3ed4c00a.png">
+
 
 
 * Columbia Engineering Bootcamp resources

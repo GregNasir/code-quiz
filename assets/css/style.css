@@ -1,3 +1,4 @@
+/* basic settings for body */
 body {
    margin: 20px;
    padding: 20px;
@@ -6,68 +7,7 @@ body {
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding-top: 300px;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 30px;
-}
-
-header h2 {
-    padding-bottom: 10px;
-}
-
-#intro p {
-    font-size: 20px;
-    line-height: 1.3;
-    text-align: center;
-    
-}
-
-h2 {
-    font-size: 40px;
-}
-
-#intro {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    margin: auto;
-    padding-top: 400px;
-
-}
-
-#intro h1 {
-    font-size: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-    /* background-color: yellow; */
-}
-
-#score-total {
-    font-size: 30px;
-    color: red;
-    animation-name: highlight;
-    animation-duration: 4s;
-}
-
-@keyframes highlight {
-    from {color: red;}
-    to {color: white;}
-  }
-
+/* sets appearance and position of buttons and text */
 button {
     margin: 0 auto;
     display: block;
@@ -81,7 +21,6 @@ button {
     max-width: 255px;
     padding: 20px 52px;
     text-align: center;
-    
     transition-duration: 0.15s;
     transition-property: background-color;
     transition-timing-function: linear;
@@ -89,26 +28,78 @@ button {
     
 }
 
-.intro-text {
-    padding: 20px 20px;
-    
-    
+/* footer settings */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 300px;
 }
 
+/* header settings */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+header h2 {
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+/* sets padding for text on first page of quiz */
+.intro-text {
+    padding: 20px 20px;   
+}
+
+/* 
+.options-button {
+    display: block;
+} */
+
+/* position of questions and answer options */
 .questions {
-    padding-top: 60px;
-    
+    padding-top: 60px;    
+}
+
+.question-list {
+    padding: 50px;
+}
+
+.questions-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 400px;
+    text-align: center;
+}
+
+/* sets positioning of sumit page */
+.submit-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 400px;
+    text-align: center;
+    line-height: 50px;
+
 }
 
 #check-selection {
     font-size: 30px;
 }
 
-
-#main-time {
-    float: right;
-}
-
+/* floats high score button to the top left */
 #high-scores {
     float: left;
 }
@@ -125,70 +116,94 @@ button {
     
 }
 
+/* settings for introduction page */
+#intro p {
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+    
+}
 
+
+#intro {
+    
+    margin: auto;
+    padding-top: 400px;
+
+}
+
+#intro h1 {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+/* displays score and adds a special effect */
+#score-total {
+    font-size: 30px;
+    color: red;
+    animation-name: highlight;
+    animation-duration: 4s;
+}
+
+@keyframes highlight {
+    from {color: red;}
+    to {color: white;}
+  }
+
+/* floats timer to the top right */
+#main-time {
+    float: right;
+}
+
+/* allows only the introduction page to be displayed upon first loading of quiz */
 #questions-page, #check-selection, #submit-page, #high-score-page {
     display: none;
     
 }
 
-.questions-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* adjust appearance as screen gets smaller */
+@media only screen and (max-width: 768px) {
+body {
     align-items: center;
-    margin: auto;
-    padding-top: 400px;
     text-align: center;
-}
-
-.submit-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding-top: 400px;
-    text-align: center;
-    line-height: 50px;
-
-}
-
-.question-list {
-    padding: 50px;
-}
-
-.options-button {
-    display: block;
-}
-
-@media only screen and (max-width: 758px) {
-    body {
-      
-      text-align: center;
     }
-    main {
-       
-    }
+   
 button {
     
     align-items: center;
     text-align: center;
 }
 
-#high-scores {
+.high-scores {
+
+   
     align-items: center;
-    text-align: center;
+    
+    background-color: red;
+    
+    
+    
+    
+    
+   
+    
+    /* margin-left: 200px; */
+    
+    
 }
 
 #intro {
    width: 50%;
-   padding-top: 200px;
   
 }
 
 #main-time {
    
-   margin-right: 60px;
    margin-left: auto;
    
 }

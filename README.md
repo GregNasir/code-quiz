@@ -1,6 +1,6 @@
 # code-quiz
 
-This code quiz was created to text users basic knowledge on coding element, in regard to Javascript and its background. Javascript itself was used, along with html and CSS to structure and render elements and the appearance.
+This code quiz was created to test users basic knowledge on coding element, in regard to Javascript and its background. Javascript itself was used, along with html and CSS to structure and render elements and the appearance.
 
 * Semantic HTML elements were used
 * Added detailed comments to sript.js, CSS and html files
@@ -27,13 +27,13 @@ HTML, CSS and Javascript were used to produce this webpage. Creating its appeara
 
 This code quiz offers users the change test their coding knowledge, and presented with a score when quiz complete or time runs out.
   
-<img width="719" alt="Screen-shot-password-generator" src="https://user-images.githubusercontent.com/63434657/233824809-95e60767-726d-4d62-b067-9985c011ea7c.png">
+  
 
 
 * Columbia Engineering Bootcamp resources
 * <a href="https://www.w3schools.com/">w3schools website</a>
 * <a href="https://developer.mozilla.org/en-US/">MND webdocs</a>
-* <a href="https://stackoverflow.com>
+* <a href="https://stackoverflow.com">Stackoverflow</a>
 
 # Licence
 

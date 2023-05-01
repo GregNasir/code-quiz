@@ -29,7 +29,7 @@ This code quiz offers users the change test their coding knowledge, and presente
   
   <img width="1425" alt="Code-Quiz-Screen-Shot" src="https://user-images.githubusercontent.com/63434657/235388867-166c2a6c-6a9f-48a2-900e-640d3ed4c00a.png">
 
-
+# Credits
 
 * Columbia Engineering Bootcamp resources
 * <a href="https://www.w3schools.com/">w3schools website</a>
